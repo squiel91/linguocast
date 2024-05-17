@@ -6,6 +6,34 @@ import {
   Outlet,
   Scripts,
 } from "@remix-run/react";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+
+import stylesheet from "./tailwind.css?url";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+  {
+    rel: "icon",
+    href: "/favicon.png",
+    type: "image/png",
+  }
+]
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Linguocast" },
+    {
+      property: "og:title",
+      content: "Linguocast | The podcast directory for language learners",
+    },
+    {
+      name: "description",
+      content: "Your go-to open-source language learning podcast directory. We're community-maintained and committed to offering the most comprehensive and up to date collection of shows.",
+    },
+    { name: "og:type", content: "website" },
+    { name: "og:image", content: "https://linguocast.com/social-logo.png" }
+  ]
+}
 
 export default function App() {
   return (
@@ -19,9 +47,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <h1>Hello world!</h1>
         <Outlet />
-
         <Scripts />
       </body>
     </html>
