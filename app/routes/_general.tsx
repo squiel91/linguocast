@@ -13,7 +13,7 @@ const GeneralLayout = () => {
   return (
     <>
       <nav className="container flex justify-between flex-wrap pt-8 pb-12 gap-4">
-        <Link to="/"><img src={logo} width='300' /></Link>
+        <Link to="/"><img src={logo} className='w-56' /></Link>
         <Link
           to="/"
           className='self-start bg-slate-100 px-4 py-2 rounded-full text-primary text-sm flex gap-2 items-center'>

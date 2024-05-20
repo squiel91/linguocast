@@ -3,7 +3,7 @@ import { Link, useLoaderData, useLocation } from '@remix-run/react'
 import { json } from "@remix-run/node"
 
 import { podcasts } from "../data/podcasts.data"
-import { GlobeIcon, PlusIcon, SearchIcon } from 'lucide-react'
+import { ChevronsUpDownIcon, FilterIcon, GlobeIcon, PlusIcon, SearchIcon } from 'lucide-react'
 import logo from '../assets/linguocast-logo.svg'
 import { LEVELS } from '../constants/levels.constants'
 import { Footer } from '@/themes/footer.themes'
@@ -13,6 +13,7 @@ import { Input } from '@/components/input'
 import { Select } from '@/components/select'
 import { LANGUAGES } from '@/constants/languages.constants'
 import { PodcastSummaryModal } from '@/components/podcast-summary-modal'
+import { cn } from '@/lib/utils'
 
 export const loader = async () => {
   return json({ podcasts })
@@ -29,6 +30,8 @@ const ListPosts = () => {
 
   const [isPodcastSummaryOpen, setIsPodcastSummaryOpen] = useState(false)
   const [selectedPodcast, setSelectedPoscast] = useState<Podcast | null>(null)
+
+  const [isFiltersExpanded, setIsFiltersExpanded] = useState(false)
   useEffect(() => {
     console.log('Here!', targetLanguage)
     const searchParams = new URLSearchParams()
@@ -59,7 +62,7 @@ const ListPosts = () => {
   return (
     <div>
       <div className='grid lg:grid-cols-4 gap:8 lg:gap-12 pl-6 md:pl-8 pr-6 md:pr-8 lg:pr-12 min-h-screen'>
-        <div className='border-b-[1px] lg:border-b-0 lg:border-r-[1px] lg:pr-8 border-slate-200 border-solid pb-8 lg:pb-16'>
+        <div className='lg:border-r-[1px] lg:pr-8 border-slate-200 border-solid pb-4 md:pb-8 lg:pb-16'>
           <div className='pt-8 lg:sticky lg:top-0 flex flex-col justify-between'>
             <img src={logo} alt="Linguocast logo" className='w-56 mb-4' />
             <div className='mb-8'>
@@ -77,7 +80,7 @@ const ListPosts = () => {
                   onChange={languageCode => setTargetLanguage(languageCode as Language | null)}
                 />
               </label>
-              <label>
+              <label className={cn(isFiltersExpanded ? 'block' : 'hidden', 'lg:block')}>
                 <div className='text-slate-500 text-sm mb-1'>Level</div>
                 <div className='flex flex-col'>
                   {LEVELS.map(level => (
@@ -96,7 +99,7 @@ const ListPosts = () => {
                   ))}
                 </div>
               </label>
-              <label>
+              <label className={cn(isFiltersExpanded ? 'block' : 'hidden', 'lg:block')}>
                 <div className='text-slate-500 text-sm mb-1'>Name</div>
                 <Input
                   value={name}
@@ -105,6 +108,13 @@ const ListPosts = () => {
                   onChange={value => setName(value)}
                 />
               </label>
+              <button
+                onClick={() => setIsFiltersExpanded(v => !v)}
+                className="lg:hidden text-primary flex gap-2 items-center text-sm"
+              >
+                <ChevronsUpDownIcon strokeWidth={1} size={18} />
+                {isFiltersExpanded ? 'Hide' : 'Show more'} filters
+              </button>
             </div>
           </div>
         </div>
@@ -117,7 +127,7 @@ const ListPosts = () => {
               }
             </div>
           </div>
-          <div className='grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 lg:col-span-3'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 gap-6 md:gap-8 lg:gap-12 lg:col-span-3'>
             {filtedPodcasts.map(podcast => (
               <button
                 key={podcast.id}
@@ -143,7 +153,7 @@ const ListPosts = () => {
               <div className=" aspect-square flex items-center justify-center border-dashed border-2 border-primary rounded-lg flex-col">
                 <PlusIcon strokeWidth={1} className="w-16 h-16" />
               </div>
-              <h2 className='font-bold mt-2 uppercase'>Share missing show</h2>
+              <h2 className='font-bold mt-2 uppercase'>Add missing show</h2>
             </Link>
           </div>
         </div>

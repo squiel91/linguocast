@@ -16,11 +16,11 @@ interface Props {
 
 export const PodcastSummaryModal = ({ open, podcast, onClose: closeHandler }: Props) => (
   <Dialog open={open} onOpenChange={(open) => !open && closeHandler()}>
-    <DialogContent className="max-w-5xl p-12 overflow-y-auto max-h-screen">
+    <DialogContent className="max-w-5xl p-6 md:p-8 lg:p-12 overflow-y-auto max-h-screen">
       <div className="grid lg:grid-cols-3 gap-x-12 gap-y-8">
         <div>
           <img src={podcast?.coverImage}  className='w-full border-2 border-solid border-slate-300 rounded-xl mb-4' />
-          <table className='mb-4 text-sm'>
+          <table className='mb-4 text-sm w-full'>
             <tbody>
               <tr className='border-b-2 border-solid border-slate-100'>
                 <th className='uppercase text-xs text-left pr-4 text-slate-500'>Language</th>
@@ -32,7 +32,7 @@ export const PodcastSummaryModal = ({ open, podcast, onClose: closeHandler }: Pr
               </tr>
               <tr className='border-b-2 border-solid border-slate-100'>
                 <th className='uppercase text-xs text-left pr-4 text-slate-500'>Levels</th>
-                <td>{podcast?.levels.join(', ')}</td>
+                <td className='capitalize'>{podcast?.levels.join(', ')}</td>
               </tr>
               {podcast?.since && (
                 <tr className='border-b-2 border-solid border-slate-100'>
