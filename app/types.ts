@@ -10,12 +10,12 @@ export interface Podcast {
   summary: string
   description: string
   coverImage: string
+  links: string[] 
+  targetLanguage: Language
+  mediumLanguage: Language
+  levels: Level[]
   episodeCount?: number
   isActive?: boolean
   since?: Date
   numberOfEpisodes?: number
-  links?: string[] 
-  targetLanguage: Language
-  mediumLanguage?: Language
-  levels: Level[]
 }

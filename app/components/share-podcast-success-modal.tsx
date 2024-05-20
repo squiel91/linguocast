@@ -12,18 +12,22 @@ import { CircleCheckIcon } from 'lucide-react'
 import { Button } from './button'
 import { Link } from '@remix-run/react'
 
+interface Props {
+  hasShared: boolean
+  isEdit: boolean
+}
 
-export const SharePodcastSuccess = ({ hasShared }: { hasShared: boolean }) => {
+export const SharePodcastSuccess = ({ hasShared, isEdit }: Props) => {
   return (
     <Dialog open={hasShared}>
-      <DialogContent className="max-w-2xl p-12 overflow-y-auto max-h-screen">
+      <DialogContent showCloseButton={false} className="max-w-2xl p-12 overflow-y-auto max-h-screen">
         <DialogHeader className='mb-4'>
           <DialogTitle className='text-xl mb-4 flex gap-2 items-center'>
             <CircleCheckIcon size={40} className='text-primary' />
             Thank for sharing!
           </DialogTitle>
           <DialogDescription className='text-base text-black'>
-            Your submission will soon be reviewed, we might make some minor adjustments before adding it to the directory. This process usually takes up to 48 hours.
+            Your {isEdit ? 'edition' : 'submission'} will soon be reviewed and might undergo some minor adjustments before being added to the directory. This process usually takes up to 48 hours.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className='flex gap-2 justify-end'>

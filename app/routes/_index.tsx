@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLoaderData, useLocation } from '@remix-run/react'
 import { json } from "@remix-run/node"
 
-import { podcasts } from "../data/podcasts.data"
+import { PODCASTS } from "../data/podcasts.data"
 import { ChevronsUpDownIcon, FilterIcon, GlobeIcon, PlusIcon, SearchIcon } from 'lucide-react'
 import logo from '../assets/linguocast-logo.svg'
 import { LEVELS } from '../constants/levels.constants'
@@ -16,14 +16,14 @@ import { PodcastSummaryModal } from '@/components/podcast-summary-modal'
 import { cn } from '@/lib/utils'
 
 export const loader = async () => {
-  return json({ podcasts })
+  return json({ PODCASTS })
 }
 
 const ListPosts = () => {
   const location = useLocation()
   const searchParams = new URLSearchParams(location.search);
 
-  const { podcasts } = useLoaderData<typeof loader>()
+  const { PODCASTS } = useLoaderData<typeof loader>()
   const [targetLanguage, setTargetLanguage] = useState<Language | null>(() => (searchParams.get('t') as Language || null))
   const [name, setName] = useState(() => (searchParams.get('q') ?? null))
   const [levels, setLevels] = useState<Level[]>(() => searchParams.getAll('l') as Level[])
@@ -53,7 +53,7 @@ const ListPosts = () => {
     )
   }, [targetLanguage, name, levels])
 
-  const filtedPodcasts = (podcasts as unknown as Podcast[]).filter(p => (
+  const filtedPodcasts = (PODCASTS as unknown as Podcast[]).filter(p => (
     (!targetLanguage || p.targetLanguage === targetLanguage) &&  
     (levels.length === 0 || levels.some(l => p.levels.includes(l))) && 
     (!name || p.name.toLowerCase().includes(name.toLowerCase())) 
@@ -62,11 +62,11 @@ const ListPosts = () => {
   return (
     <div>
       <div className='grid lg:grid-cols-4 gap:8 lg:gap-12 pl-6 md:pl-8 pr-6 md:pr-8 lg:pr-12 min-h-screen'>
-        <div className='lg:border-r-[1px] lg:pr-8 border-slate-200 border-solid pb-4 md:pb-8 lg:pb-16'>
+        <div className='lg:border-r-[1px] lg:pr-8 border-slate-200 border-solid pb-10 lg:pb-16'>
           <div className='pt-8 lg:sticky lg:top-0 flex flex-col justify-between'>
             <img src={logo} alt="Linguocast logo" className='w-56 mb-4' />
             <div className='mb-8'>
-              The podcast directory for language learners. <ArrowLink to='/about'>Learn more</ArrowLink>
+              The podcast directory for language learners. <ArrowLink to='/about'>Know more</ArrowLink>
             </div>
             <div className='flex flex-col gap-4'>
               <label>
@@ -104,7 +104,6 @@ const ListPosts = () => {
                 <Input
                   value={name}
                   prepend={<SearchIcon className='w-full h-full' />}
-                  placeholder='Search by name'
                   onChange={value => setName(value)}
                 />
               </label>
@@ -112,14 +111,14 @@ const ListPosts = () => {
                 onClick={() => setIsFiltersExpanded(v => !v)}
                 className="lg:hidden text-primary flex gap-2 items-center text-sm"
               >
-                <ChevronsUpDownIcon strokeWidth={1} size={18} />
+                <ChevronsUpDownIcon size={16} />
                 {isFiltersExpanded ? 'Hide' : 'Show more'} filters
               </button>
             </div>
           </div>
         </div>
         <div className='lg:col-span-3 mb-16'>
-          <div className='flex justify-between col-span-full my-8'>
+          <div className='hidden lg:flex justify-between col-span-full my-8'>
             <div className='text-sm text-stone-400'>
               {filtedPodcasts.length === 0
                 ? 'Oops! No podcast to show.'
@@ -127,7 +126,7 @@ const ListPosts = () => {
               }
             </div>
           </div>
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 gap-6 md:gap-8 lg:gap-12 lg:col-span-3'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 gap-x-6  md:gap-x-8 lg:gap-x-12 gap-y-12 lg:col-span-3'>
             {filtedPodcasts.map(podcast => (
               <button
                 key={podcast.id}
@@ -149,7 +148,7 @@ const ListPosts = () => {
                 </article>
               </button>
             ))}
-            <Link to="/share-podcast" className="self-start text-primary">
+            <Link to="/podcasts/suggest" className="self-start text-primary">
               <div className=" aspect-square flex items-center justify-center border-dashed border-2 border-primary rounded-lg flex-col">
                 <PlusIcon strokeWidth={1} className="w-16 h-16" />
               </div>

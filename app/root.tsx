@@ -31,7 +31,7 @@ export const meta: MetaFunction = () => {
     },
     {
       name: "description",
-      content: "Your go-to open-source language learning podcast directory. We're community-maintained and committed to offering the most comprehensive and up to date collection of shows.",
+      content: "Your go-to open-source language learning podcast directory. We're community-maintained and committed to offer the most comprehensive and up to date collection of shows.",
     },
     { name: "og:type", content: "website" },
     { name: "og:image", content: "https://linguocast.com/social-logo.png" }

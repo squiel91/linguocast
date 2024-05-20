@@ -3,9 +3,8 @@ import daPengCover from './assets/dapeng.jpg'
 import teaTimeCover from './assets/tea-time-chinese.jpg'
 import dashuCover from './assets/dashu.jpg'
 import chinesePodCover from './assets/chinesepod.jpg'
-import ezeAvatar from './assets/authors/eze.jpg'
 
-export const podcasts: Podcast[] = [
+export const PODCASTS: Podcast[] = [
   {
     id: 1,
     name: 'DaPeng Chinese',
@@ -14,6 +13,7 @@ export const podcasts: Podcast[] = [
     coverImage: daPengCover,
     targetLanguage: 'mandarin-chinese',
     mediumLanguage: 'english',
+    links: [],
     levels: ['intermediate', 'upper-intermediate']
   },
   {
@@ -24,6 +24,7 @@ export const podcasts: Podcast[] = [
     coverImage: teaTimeCover,
     targetLanguage: 'mandarin-chinese',
     mediumLanguage: 'english',
+    links: [],
     levels: ['beginner', 'intermediate']
   },
   {
@@ -34,6 +35,7 @@ export const podcasts: Podcast[] = [
     coverImage: chinesePodCover,
     targetLanguage: 'mandarin-chinese',
     mediumLanguage: 'english',
+    links: [],
     levels: ['beginner', 'intermediate', 'upper-intermediate', 'advanced']
   },
   {

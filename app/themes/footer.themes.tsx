@@ -11,7 +11,7 @@ export const Footer = () => (
     <div>
       <p className='mb-4'>
         Your go-to open-source language learning podcast directory. We're community-maintained and
-        committed to offering the most comprehensive and up to date collection of shows.
+        committed to offer the most comprehensive and up to date collection of shows.
       </p>
       <p>
         Got questions, ideas, or just want to say 'hey'? Drop us a line at <Link to='mailto:hey@linguocast.com' className='text-primary'>hey@linguocast.com</Link>!

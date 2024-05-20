@@ -21,7 +21,7 @@ export const Input = ({
 }: Props) => (
   <div className={cn('relative', className)}>
     {prepend && (
-      <div className='absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-gray-500'>
+      <div className='absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-gray-500 appearance-none bg-transparent'>
         {prepend}
       </div>
     )}

@@ -19,8 +19,8 @@ export const PlatformIcon = ({ link, className }: { link: string, className?: st
   } else if (link.toLowerCase().includes('spotify')) {
     return <img src={spotifyIcon} className={className} />
   } else if (link.toLowerCase().includes('rss')) {
-    return <RssIcon className={cn('text-primary', className)} />
+    return <RssIcon strokeWidth={4} className={cn('text-black', className)} />
   } else {
-    return <LinkIcon className={className} />
+    return <LinkIcon className={cn('text-slate-500', className)} />
   }
 }

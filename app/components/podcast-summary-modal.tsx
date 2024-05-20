@@ -5,8 +5,9 @@ import {
   DialogContent,
 } from "./ui/dialog"
 import { PlatformIcon } from './platform-icon'
-import { getMainDomain } from '@/utils/url.utils'
+import { getMainDomain, urlSafe } from '@/utils/url.utils'
 import { ArrowUpRightIcon } from 'lucide-react'
+import { ArrowLink } from './arrow-link'
 
 interface Props {
   open: boolean
@@ -51,12 +52,7 @@ export const PodcastSummaryModal = ({ open, podcast, onClose: closeHandler }: Pr
         </div>
         <div className='lg:col-span-2'>
           <div className='text-3xl mb-4 font-bold'>{podcast?.name}</div>
-          
-          <div>{podcast?.description.split('\n').filter(text => text).map(text => (
-            <p className='mb-4'>{text}</p>
-          ))}</div>
-
-          <ul className='flex flex-wrap gap-2 items-start mt-8'>
+          <ul className='flex flex-wrap gap-2 items-start mt-4 mb-8'>
             {podcast?.links?.map(link => (
               <li>
                 <a href={link} target='_blank' title={link} className='flex bg-slate-200 px-3 py-2 rounded-full relative gap-2 items-center capitalize'>
@@ -66,9 +62,15 @@ export const PodcastSummaryModal = ({ open, podcast, onClose: closeHandler }: Pr
                 </a>
               </li>
             ))}
+          </ul>         
+          <div>{podcast?.description.split('\n').filter(text => text).map(text => (
+            <p className='mb-4'>{text}</p>
+          ))}</div>
+          <ul className='flex gap-4 mt-8 flex-wrap'>
+            <ArrowLink to={`/podcasts/${podcast?.id}/${urlSafe(podcast?.name)}`}>View full information</ArrowLink>
+            <ArrowLink to={`/podcasts/${podcast?.id}/${urlSafe(podcast?.name)}/suggest`}>Suggest and edit</ArrowLink>
           </ul>
         </div>
-        
       </div>
     </DialogContent>
   </Dialog>
