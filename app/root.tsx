@@ -23,6 +23,7 @@ export const links: LinksFunction = () => [
 
 export const meta: MetaFunction = () => {
   return [
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
     { title: "Linguocast" },
     {
       property: "og:title",
