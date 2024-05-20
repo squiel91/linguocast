@@ -14,6 +14,7 @@ import { Select } from '@/components/select'
 import { LANGUAGES } from '@/constants/languages.constants'
 import { PodcastSummaryModal } from '@/components/podcast-summary-modal'
 import { cn } from '@/lib/utils'
+import { Checkbox } from '@/components/checkbox'
 
 export const loader = async () => {
   return json({ PODCASTS })
@@ -59,6 +60,8 @@ const ListPosts = () => {
     (!name || p.name.toLowerCase().includes(name.toLowerCase())) 
   ))
 
+  const appliedHiddenFiltersCount = (name ? 1 : 0) + (levels.length > 0 ? 1 : 0) 
+
   return (
     <div>
       <div className='grid lg:grid-cols-4 gap:8 lg:gap-12 pl-6 md:pl-8 pr-6 md:pr-8 lg:pr-12 min-h-screen'>
@@ -85,11 +88,9 @@ const ListPosts = () => {
                 <div className='flex flex-col'>
                   {LEVELS.map(level => (
                     <label className='flex items-center gap-2 capitalize' key={level}>
-                      <input
-                        type="checkbox"
-                        className='border-slate-300'
+                      <Checkbox
                         checked={levels.includes(level)}
-                        onChange={event => setLevels(levels => event.target.checked
+                        onChange={checked => setLevels(levels => checked
                           ? [...levels, level]
                           : levels.filter(l => l !== level)
                         )}
@@ -112,7 +113,13 @@ const ListPosts = () => {
                 className="lg:hidden text-primary flex gap-2 items-center text-sm"
               >
                 <ChevronsUpDownIcon size={16} />
-                {isFiltersExpanded ? 'Hide' : 'Show more'} filters
+                {isFiltersExpanded
+                  ? 'Hide filters'
+                  : `Show more filters ${
+                    appliedHiddenFiltersCount > 0
+                    ? `(${appliedHiddenFiltersCount} applied)`
+                    : ''}`
+                }
               </button>
             </div>
           </div>
