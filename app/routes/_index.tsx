@@ -3,7 +3,7 @@ import { Link, useLoaderData, useLocation } from '@remix-run/react'
 import { json } from "@remix-run/node"
 
 import { PODCASTS } from "../data/podcasts.data"
-import { ChevronsUpDownIcon, FilterIcon, GlobeIcon, PlusIcon, SearchIcon } from 'lucide-react'
+import { ChevronsUpDownIcon, GlobeIcon, PlusIcon, SearchIcon } from 'lucide-react'
 import logo from '../assets/linguocast-logo.svg'
 import { LEVELS } from '../constants/levels.constants'
 import { Footer } from '@/themes/footer.themes'
@@ -12,9 +12,9 @@ import { ArrowLink } from '@/components/arrow-link'
 import { Input } from '@/components/input'
 import { Select } from '@/components/select'
 import { LANGUAGES } from '@/constants/languages.constants'
-import { PodcastSummaryModal } from '@/components/podcast-summary-modal'
 import { cn } from '@/lib/utils'
 import { Checkbox } from '@/components/checkbox'
+import { urlSafe } from '@/utils/url.utils'
 
 export const loader = async () => {
   return json({ PODCASTS })
@@ -135,12 +135,9 @@ const ListPosts = () => {
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 gap-x-6  md:gap-x-8 lg:gap-x-12 gap-y-12 lg:col-span-3'>
             {filtedPodcasts.map(podcast => (
-              <button
+              <Link
                 key={podcast.id}
-                onClick={() => {
-                  setSelectedPoscast(podcast)
-                  setIsPodcastSummaryOpen(true)
-                }}
+                to={`/podcasts/${podcast?.id}/${urlSafe(podcast?.name)}`}
                 className='text-left w-full self-start'
               >
                 <article>
@@ -153,7 +150,7 @@ const ListPosts = () => {
                     ))}
                   </div>
                 </article>
-              </button>
+              </Link>
             ))}
             <Link to="/podcasts/suggest" className="self-start text-primary">
               <div className=" aspect-square flex items-center justify-center border-dashed border-2 border-primary rounded-lg flex-col">
@@ -169,11 +166,6 @@ const ListPosts = () => {
           <Footer />
         </div>
       </div>
-      <PodcastSummaryModal
-        podcast={selectedPodcast}
-        open={isPodcastSummaryOpen}
-        onClose={() => { setIsPodcastSummaryOpen(false); setTimeout(() => setSelectedPoscast(null), 300) }}
-      />
     </div>
   )
 }

@@ -17,7 +17,7 @@ interface Props {
   isEdit: boolean
 }
 
-export const SharePodcastSuccess = ({ hasShared, isEdit }: Props) => {
+export const SuggestionSuccessModal = ({ hasShared, isEdit }: Props) => {
   return (
     <Dialog open={hasShared}>
       <DialogContent showCloseButton={false} className="max-w-2xl p-12 overflow-y-auto max-h-screen">

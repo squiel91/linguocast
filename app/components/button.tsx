@@ -3,11 +3,12 @@ import { Loader2Icon } from 'lucide-react'
 import React, { ReactNode } from 'react'
 
 interface Props {
-  onClick: () => void
+  onClick?: () => void
   isLoading?: boolean
   disabled?: boolean
   className?: string
   variant?: 'primary' | 'outline',
+  compact?: boolean
   children: ReactNode
 }
 export const Button = ({
@@ -16,6 +17,7 @@ export const Button = ({
   className,
   isLoading = false,
   variant = 'primary',
+  compact = false,
   children
 }: Props) => (
   <button
@@ -25,7 +27,8 @@ export const Button = ({
       variant === 'primary'
         ? 'bg-primary text-white'
         : 'text-primary border-primary border-[1px] border-solid',
-      'px-6 py-3 rounded-md',
+      compact ? 'px-6 py-3' : 'px-3 py-2',
+      'rounded-md',
       className
     )}
   >

@@ -1,9 +1,10 @@
 import { ArrowLink } from '@/components/arrow-link'
 import { Button } from '@/components/button'
+import { Checkbox } from '@/components/checkbox'
 import { Input } from '@/components/input'
 import { PlatformIcon } from '@/components/platform-icon'
 import { Select } from '@/components/select'
-import { SharePodcastSuccess } from '@/components/share-podcast-success-modal'
+import { SuggestionSuccessModal } from '@/components/suggestion-success-modal'
 import { Textarea } from '@/components/textarea'
 import { Tooltip } from '@/components/tooltip'
 import { LANGUAGES } from '@/constants/languages.constants'
@@ -139,10 +140,9 @@ const SharePodcast = () => {
             <div className='flex gap-4 flex-wrap text-sm '>
               {LEVELS.map(level => (
                 <label key={level} className='flex items-center gap-2 capitalize'>
-                  <input
-                    type="checkbox"
+                  <Checkbox
                     checked={levels.includes(level)}
-                    onChange={event => setLevels(levels => event.target.checked
+                    onChange={checked => setLevels(levels => checked
                       ? [...levels, level]
                       : levels.filter(l => l !== level)
                     )}
@@ -177,7 +177,7 @@ const SharePodcast = () => {
           <div className='text-sm mb-4 mt-2'>
             <p className='mb-2 '> 
               Add links where to listen and support the show: Apple, Youtube,
-              Patreon, <ArrowLink href="https://en.wikipedia.org/wiki/RSS" target='_blank' className="text-primary">RSS Feed</ArrowLink>, etc.
+              Patreon, <ArrowLink to="https://en.wikipedia.org/wiki/RSS" target="_blank">RSS Feed</ArrowLink>, etc.
             </p>
           </div>
           <ul className='flex gap-4 flex-col'>
@@ -233,7 +233,7 @@ const SharePodcast = () => {
           By submitting you agree to the <ArrowLink to="/contributions" target='_blank'>contributions terms</ArrowLink>
         </p>
       </div>
-      <SharePodcastSuccess hasShared={hasShared} isEdit={isEdit} />
+      <SuggestionSuccessModal hasShared={hasShared} isEdit={isEdit} />
     </>
   )
 }

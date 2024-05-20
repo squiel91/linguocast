@@ -5,6 +5,7 @@ import {
   Meta,
   Outlet,
   Scripts,
+  ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
@@ -51,6 +52,7 @@ export default function App() {
       </head>
       <body>
         <Outlet />
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>

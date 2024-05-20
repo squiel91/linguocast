@@ -4,10 +4,12 @@ import { PodcastIcon } from "lucide-react";
 import githubIcon from '../assets/platforms/github.svg'
 import discordIcon from '../assets/platforms/discord.svg'
 import { Link } from "@remix-run/react";
+import CCLogo from '@/assets/creative-commons-logo.svg'
+import MITLogo from '@/assets/mit-license.svg'
 
 export const Footer = () => (
 
-  <footer className="bg-slate-100 text-gray-500 pt-12 grid md:grid-cols-2 gap-12 text-sm">
+  <footer className="bg-slate-100 text-gray-500 pt-20 grid md:grid-cols-2 gap-12 text-sm">
     <div>
       <p className='mb-4'>
         Your go-to open-source language learning podcast directory. We're community-maintained and
@@ -61,7 +63,16 @@ export const Footer = () => (
       </ul>
     </div>
     <div className='md:col-span-2 border-t-[1px] border-solid border-slate-300 pt-4 mb-8 mt-4 text-sm'>
-      Licensed under Attribution-NonCommercial-ShareAlike / CC BY-NC-SA
+      <div className="mb-2 flex gap-3 flex-col">
+        <div className="flex gap-4 items-center">
+          <img src={CCLogo} width={120} />
+          <img src={MITLogo} width={48} />
+        </div>
+        <div>
+          The podcast directory data is licensed under <ArrowLink to="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</ArrowLink><br />
+          The platform (as the software) is licesed under <ArrowLink to="https://opensource.org/license/mit" target="_blank">The MIT License</ArrowLink>
+        </div>
+      </div>
     </div>
   </footer>
 )
