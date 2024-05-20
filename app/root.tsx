@@ -8,10 +8,12 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
-import stylesheet from "./tailwind.css?url";
+import tailwindStyles from "./tailwind.css?url";
+import baseStyles from "./styles.css?url";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
+  { rel: "stylesheet", href: tailwindStyles },
+  { rel: "stylesheet", href: baseStyles },
   {
     rel: "icon",
     href: "/favicon.png",
