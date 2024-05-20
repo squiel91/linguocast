@@ -66,11 +66,11 @@ const ListPosts = () => {
           <div className='pt-8 lg:sticky lg:top-0 flex flex-col justify-between'>
             <img src={logo} alt="Linguocast logo" className='w-56 mb-4' />
             <div className='mb-8'>
-              The podcast directory for language learners. <ArrowLink to='/about'>Know more</ArrowLink>
+              Explore the most complete language learning podcast directory. <ArrowLink to='/about'>Read more</ArrowLink>
             </div>
             <div className='flex flex-col gap-4'>
               <label>
-                <div className='text-slate-500 text-sm mb-1'>Language</div>
+                <div className='text-sm mb-1'>Language</div>
                 <Select
                   value={targetLanguage}
                   options={[
@@ -81,7 +81,7 @@ const ListPosts = () => {
                 />
               </label>
               <label className={cn(isFiltersExpanded ? 'block' : 'hidden', 'lg:block')}>
-                <div className='text-slate-500 text-sm mb-1'>Level</div>
+                <div className='text-sm mb-1'>Level</div>
                 <div className='flex flex-col'>
                   {LEVELS.map(level => (
                     <label className='flex items-center gap-2 capitalize' key={level}>
@@ -100,7 +100,7 @@ const ListPosts = () => {
                 </div>
               </label>
               <label className={cn(isFiltersExpanded ? 'block' : 'hidden', 'lg:block')}>
-                <div className='text-slate-500 text-sm mb-1'>Name</div>
+                <div className='text-sm mb-1'>Name</div>
                 <Input
                   value={name}
                   prepend={<SearchIcon className='w-full h-full' />}

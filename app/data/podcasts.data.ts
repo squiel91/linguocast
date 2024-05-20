@@ -8,7 +8,7 @@ export const PODCASTS: Podcast[] = [
   {
     id: 1,
     name: 'DaPeng Chinese',
-    summary: 'A distended show with a carithmatic host that teaches usefull chinese expressions and host \'ask fast reply fast.\' (快問快答) with other students.',
+    summary: 'An engaging show with a charismatic host teaching useful Chinese expressions, featuring interactive "ask fast, reply fast" 快問快答 segments with students.',
     description: 'content',
     coverImage: daPengCover,
     targetLanguage: 'mandarin-chinese',
@@ -30,7 +30,7 @@ export const PODCASTS: Podcast[] = [
   {
     id: 3,
     name: 'ChinesePod',
-    summary: 'A distended show with a carithmatic host that teaches usefull chinese expressions and host \'ask fast reply fast.\' (快問快答) with other students.',
+    summary: 'An engaging show with a charismatic host teaching useful Chinese expressions, featuring interactive "ask fast, reply fast" 快問快答 segments with students.',
     description: 'content',
     coverImage: chinesePodCover,
     targetLanguage: 'mandarin-chinese',
