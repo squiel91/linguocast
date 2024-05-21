@@ -7,15 +7,22 @@ export type Language = typeof LANGUAGES[number]['code']
 export interface Podcast {
   id: number
   name: string
-  summary: string
+  summary?: string // short description to show in the listing
   description: string
-  coverImage: string
+  coverImage?: string
   links: string[] 
   targetLanguage: Language
-  mediumLanguage: Language
+  mediumLanguage: Language // the language used to provide translations and explanations
   levels: Level[]
   episodeCount?: number
   isActive?: boolean
-  since?: Date
-  numberOfEpisodes?: number
+  since?: Date // first episode's date
+  hasVideo?: boolean
+  avarageEpisodeMinutesDuration?: number
+  episodesCount?: number
+  transcript?: {
+    available: boolean
+    format?: 'pdf' | 'video'
+    paid?: boolean
+  }
 }

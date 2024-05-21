@@ -28,7 +28,7 @@ export const Button = ({
         ? 'bg-primary text-white'
         : 'text-primary border-primary border-[1px] border-solid',
       compact ? 'px-6 py-3' : 'px-3 py-2',
-      'rounded-md',
+      'w-full md:w-auto rounded-md',
       className
     )}
   >

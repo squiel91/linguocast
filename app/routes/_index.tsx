@@ -15,6 +15,7 @@ import { LANGUAGES } from '@/constants/languages.constants'
 import { cn } from '@/lib/utils'
 import { Checkbox } from '@/components/checkbox'
 import { urlSafe } from '@/utils/url.utils'
+import noImage from '@/assets/no-image.svg'
 
 export const loader = async () => {
   return json({ PODCASTS })
@@ -28,9 +29,6 @@ const ListPosts = () => {
   const [targetLanguage, setTargetLanguage] = useState<Language | null>(() => (searchParams.get('t') as Language || null))
   const [name, setName] = useState(() => (searchParams.get('q') ?? null))
   const [levels, setLevels] = useState<Level[]>(() => searchParams.getAll('l') as Level[])
-
-  const [isPodcastSummaryOpen, setIsPodcastSummaryOpen] = useState(false)
-  const [selectedPodcast, setSelectedPoscast] = useState<Podcast | null>(null)
 
   const [isFiltersExpanded, setIsFiltersExpanded] = useState(false)
   useEffect(() => {
@@ -141,9 +139,9 @@ const ListPosts = () => {
                 className='text-left w-full self-start'
               >
                 <article>
-                  <img src={podcast.coverImage} className='w-full border-solid border-2 border-slate-200 rounded-lg' />
+                  <img src={podcast.coverImage ?? noImage} className='w-full border-solid border-2 border-slate-200 rounded-lg' />
                   <h2 className='text-lg font-bold mt-2'>{podcast.name}</h2>
-                  <p className='text-slate-500 text-sm mt-1'>{podcast.summary}</p>
+                  <p className='text-slate-500 text-sm mt-1 line-clamp-2'>{podcast.summary ?? podcast.description}</p>
                   <div className='flex gap-2 flex-wrap text-sm mt-2'>
                     {[podcast.targetLanguage, ...podcast.levels].map(tag => (
                       <div key={tag} className='bg-slate-200 text-slate-700 inline-block px-2 rounded-full capitalize'>{tag}</div>

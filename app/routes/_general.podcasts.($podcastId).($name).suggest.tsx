@@ -6,12 +6,11 @@ import { PlatformIcon } from '@/components/platform-icon'
 import { Select } from '@/components/select'
 import { SuggestionSuccessModal } from '@/components/suggestion-success-modal'
 import { Textarea } from '@/components/textarea'
-import { Tooltip } from '@/components/tooltip'
 import { LANGUAGES } from '@/constants/languages.constants'
 import { LEVELS } from '@/constants/levels.constants'
 import { PODCASTS } from '@/data/podcasts.data'
 import { Language, Podcast } from '@/types'
-import { Link, useParams } from '@remix-run/react'
+import { useParams } from '@remix-run/react'
 import axios from 'axios'
 import { AlertCircleIcon, Loader2Icon, MessageCircleWarningIcon, PlusIcon, TrashIcon } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
@@ -136,8 +135,8 @@ const SharePodcast = () => {
             </div>
           </label>
           <div className='md:col-span-2'>
-            <div className='text-sm mb-1'>Level</div>
-            <div className='flex gap-4 flex-wrap text-sm '>
+            <div className='text-sm mb-2'>Level</div>
+            <div className='flex gap-x-4 gap-y-2 flex-wrap text-sm flex-col md:flex-row'>
               {LEVELS.map(level => (
                 <label key={level} className='flex items-center gap-2 capitalize'>
                   <Checkbox
@@ -173,12 +172,9 @@ const SharePodcast = () => {
             </div>
           </label>
         </div>
-        <div>
-          <div className='text-sm mb-4 mt-2'>
-            <p className='mb-2 '> 
-              Add links where to listen and support the show: Apple, Youtube,
-              Patreon, <ArrowLink to="https://en.wikipedia.org/wiki/RSS" target="_blank">RSS Feed</ArrowLink>, etc.
-            </p>
+        <div className='flex flex-col gap-2'>
+          <div className='text-sm'>
+            Links
           </div>
           <ul className='flex gap-4 flex-col'>
             {links.map((link, index) => (
@@ -203,15 +199,17 @@ const SharePodcast = () => {
               </li>
             ))}
           </ul>
+          <p className='text-xs text-slate-500 italic'>
+            Add links where to listen and support the show: Apple, Youtube, Spotify,
+            Patreon, <ArrowLink to="https://en.wikipedia.org/wiki/RSS" target="_blank">RSS Feed</ArrowLink>, etc.
+          </p>
           <Button
             onClick={() => setLinks(l => [...l, ''])}
             disabled={isLoading}
             variant='outline'
             className='mt-4 px-3 py-1'
           >
-            <div className='flex gap-1 items-center'>
-              + Add link
-            </div>
+            + Add link
           </Button>
         </div>
       </div>
@@ -221,7 +219,7 @@ const SharePodcast = () => {
           {errorMessage}
         </div>
       )}
-      <div className='rounded-md text-sm flex gap-4 items-center'>
+      <div className='rounded-md text-sm flex flex-col md:flex-row gap-4 md:items-center'>
         <Button
           onClick={submitHandler}
           isLoading={isLoading}

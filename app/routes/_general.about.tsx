@@ -11,16 +11,18 @@ const About = () => (
       <div className='md:col-span-2 max-w-2xl space-y-4'>
         <p>
           Podcasts are a fantastic way to learn—they're informative, engaging,
-          and just plain fun. Why not use them to learn a language faster and more
-          effectively? That's exactly what we intend to do!
+          and just plain fun. Listening to podcasts that match your learning stage boosts your
+          listening skills, expands your vocabulary, and even lets you practice
+          reading with transcripts. Why not use them to learn a language faster
+          and more effectively? That's exactly what we intend to do!
         </p>
         <p>
           Linguocast initial mission is to curate the ultimate podcast catalog
           for language learners, from beginners to advanced. This is too big of a
           task for one person, or even a
           whole company. That's why we decided to rely in the language learning
-          vibrant community. As they discover our next favorite learning podcast, in
-          turn, they share with others those hidden gems you find along the way!
+          vibrant community. As they discover their next favorite learning podcast, in
+          turn, they share with others those hidden gems they've found along the way!
           Other ways of contributing is by suggest edits, comment and review shows,
           join our Discord to help shape the future of the platform, or even
           develop/design new features.
@@ -43,11 +45,6 @@ const About = () => (
           to maximize their reach and impact.
         </p>
         <p>
-          Listening to podcasts that match your learning stage boosts your
-          listening skills, expands your vocabulary, and even lets you practice
-          reading with transcripts.
-        </p>
-        <p>
           We have big dreams. We want to be the top platform for learners to
           improve their language skills by listening, watching, and reading
           content from podcasters and creators. A place where creators can also
@@ -58,7 +55,12 @@ const About = () => (
         </p>
       </div>
       <div className='space-y-4'>
-        <img src={ezeAvatar} className="w-40 md:w-46 h-40 md:h-46 lg:w-52 lg:h-52 rounded-full mb-8" />
+        <img
+          src={ezeAvatar}
+          className="
+            border-[1px] border-solid border-slate-300 p-2
+            w-40 md:w-46 h-40 md:h-46 lg:w-52 lg:h-52 rounded-full mb-8"
+          />
         <p>
           Hey there! 👋 I'm Ezequiel Santiago, a software engineer from Uruguay
           and the founder of Linguocast.

@@ -69,10 +69,28 @@ const ViewPodcast = () => {
             <td>{new Date(podcast.since).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</td>
           </tr>
         )}
-        {podcast.numberOfEpisodes && (
+        {podcast.episodeCount && (
           <tr className='border-b-2 border-solid border-slate-100'>
             <th className='uppercase text-xs text-left pr-4 text-slate-500'># Episodes</th>
-            <td>{podcast.numberOfEpisodes}</td>
+            <td>{podcast.episodeCount}</td>
+          </tr>
+        )}
+        {(typeof podcast.hasVideo === 'boolean') && (
+          <tr className='border-b-2 border-solid border-slate-100'>
+            <th className='uppercase text-xs text-left pr-4 text-slate-500'>Has video</th>
+            <td>{podcast.hasVideo ? 'Yes' : 'No'}</td>
+          </tr>
+        )}
+        {(typeof podcast.isActive === 'boolean') && (
+          <tr className='border-b-2 border-solid border-slate-100'>
+            <th className='uppercase text-xs text-left pr-4 text-slate-500'>Is Active</th>
+            <td>{podcast.isActive ? 'Yes' : 'No'}</td>
+          </tr>
+        )}
+        {typeof podcast.transcript && (
+          <tr className='border-b-2 border-solid border-slate-100'>
+            <th className='uppercase text-xs text-left pr-4 text-slate-500'>Trasncript</th>
+            <td>{podcast.isActive ? 'Yes' : 'No'}</td>
           </tr>
         )}
       </tbody>
