@@ -64,7 +64,7 @@ const ListPosts = () => {
 
   return (
     <div>
-      <div className='grid lg:grid-cols-4 gap:8 lg:gap-12 pl-6 md:pl-8 pr-6 md:pr-8 lg:pr-12 min-h-screen'>
+      <div className='grid lg:grid-cols-4 gap:8 lg:gap-12 px-6 md:px-8 lg:px-12 min-h-screen'>
         <div className='lg:border-r-[1px] lg:pr-8 border-slate-200 border-solid pb-10 lg:pb-16'>
           <div className='pt-8 lg:sticky lg:top-0 flex flex-col justify-between'>
             <img src={logo} alt="Linguocast logo" className='w-56 mb-4' />

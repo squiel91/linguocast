@@ -1,58 +1,49 @@
 
+import { ArrowLink } from '@/components/arrow-link'
 import React from 'react'
 
 const Contributions = () => (
   <>
-    <h1 className='text-4xl font-bold mb-8'>Contributions terms</h1>
-    <div className='max-w-2xl'>
+    <h1>Contributions terms</h1>
+    <div className='max-w-2xl space-y-4'>      
+      <h2>Licensing</h2>
       <p>
-        Open source, community mantained comprehensive podcast's directory to boost your listening commprehension and vocablary in any language.
-        The long term vision is to create the platform for language learners content creators to distrubute and monetize their content. listen to podcast and video podcast to boost owned by the community
+        The content on Linguocast is licensed under 
+        the <ArrowLink to="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY-NC-SA 4.0</ArrowLink> license, and the platform software is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT license</a>. This means that users can share and adapt the content, provided it's not for commercial purposes, they give appropriate credit, and they distribute any derivative works under the same license. The platform software can be freely used, modified, and distributed, with attribution to the original creators.
       </p>
       <p>
-        In the pipeline:
+        All podcast content and comments on the platform are the sole
+        responsibility of their authors and do not represent the views or opinions
+        of Linguocast staff.
       </p>
-      <ul>
-        <li>
-          Add advanced filters
-        </li>
-        <li>
-          <ul>
-            <li>
-              Add database (possibly initially SQLite)
-              <ul>
-                <li>
-                  Connect to RSS
-                  <ul>
-                    <li>automatically set/update number of episodes, last episode date, is active, etc.</li>
-                    <li>Show episodes and listen to them</li>
-                  </ul>
-                </li>
-                <li>
-                  Add user creation/authentication
-                  <ul>
-                    <li>Add reviews/comment system with a 1 to 5 starts</li>
-                    <li>Add reputation for the users who uploades</li>
-                  </ul>
-                </li>
-                <li>Create new podcasts</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          Improve design
-        </li>
-        <li>
-          Improve SEO
-        </li>
-        <li>
-          Create Progressive web App
-        </li>
-      </ul>
+      
+      <h2>Adding New Podcasts</h2>
       <p>
-        For developers:
-        The platform is made in Typescript+React+Remix+Tailwind, hosted in Vercel (for now).
+        We welcome the addition of new podcasts to our directory, provided they
+        are not exclusively intended for native speakers. We do not accept
+        content that incites violence, harm, or any form of discrimination based
+        on race, gender, sexual orientation, etc. The Linguocast curators will
+        determine if the content meets these criteria. To get more involved in
+        the curating process, join our <ArrowLink to="https://discord.com/invite/dBNT2BBk" target="_blank" rel="noopener noreferrer">Discord</ArrowLink> or write to <ArrowLink href="mailto:content@linguocast.com">content@linguocast.com</ArrowLink>.
+      </p>
+      
+      <h2>Commenting on Podcasts and Episodes</h2>
+      <p>
+        Our goal is to foster an inclusive community focused on the language
+        learning experience. We expect comments to be respectful and relevant
+        to the content. Offensive, discriminatory, or excessively personal
+        comments are not allowed. Comments flagged as offensive will be reviewed
+        and may be censored. Users with multiple censored comments or those who
+        post content that is flagrantly discriminatory or incites violence or
+        self-harm will be banned. Moderators will review and determine each case
+        based on its merits.
+      </p>
+      
+      <h2>Development and Design</h2>
+      <p>
+        If you are interested in developing or designing new features, please
+        review our planned features. Contact us at <ArrowLink to="mailto:platform@linguocast.com">platform@linguocast.com</ArrowLink> to
+        align your efforts with our roadmap.
       </p>
     </div>
   </>
