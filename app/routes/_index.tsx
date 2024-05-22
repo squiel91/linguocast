@@ -140,7 +140,7 @@ const ListPosts = () => {
               >
                 <article>
                   <img src={podcast.coverImage ?? noImage} className='w-full border-solid border-2 border-slate-200 rounded-lg' />
-                  <h2 className='text-lg font-bold mt-2'>{podcast.name}</h2>
+                  <h2 className='text-lg font-bold pt-2'>{podcast.name}</h2>
                   <p className='text-slate-500 text-sm mt-1 line-clamp-2'>{podcast.summary ?? podcast.description}</p>
                   <div className='flex gap-2 flex-wrap text-sm mt-2'>
                     {[podcast.targetLanguage, ...podcast.levels].map(tag => (

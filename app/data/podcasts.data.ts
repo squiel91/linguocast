@@ -3,7 +3,6 @@ import daPengCover from './assets/dapeng.jpg'
 import teaTimeCover from './assets/tea-time-chinese.jpg'
 import dashuCover from './assets/dashu.jpg'
 import chinesePodCover from './assets/chinese-pod.jpg'
-import bearTalkCover from './assets/bear-talk.png'
 import chillChatCover from './assets/chill-chat.jpeg'
 import coffeeBreakCover from './assets/coffee-break-chinese.jpeg'
 import mandarinMonkeyCover from './assets/mandarin-monkey.png'
@@ -18,6 +17,7 @@ import ILoveLearningChineseCover from './assets/i-love-learning-chinese.jpg'
 import imLearningChineseCover from './assets/im-learning-chinese.jpg'
 import learnChinese101Cover from './assets/learn-chinese-101.jpg'
 import chineseLessonsWithSergeMelkyn from './assets/chinese-lessons-with-serge-melnyk.jpg'
+import slowChineseArchivedCover from './assets/slow-chinese.jpg'
 
 export const PODCASTS: Podcast[] = [
   {
@@ -97,35 +97,47 @@ When you’re no longer a beginner, you can move on to the intermediate and adva
   {
     id: 5,
     name: 'Slow Chinese',
-    summary: 'Simple stories read slowly to help with comprehension.',
-    description: 'Provides short, easy-to-understand stories and news articles read slowly, perfect for improving listening skills.',
+    description: `The Slow Chinese podcast covers topics like relationships, online slang, and food in China. The host, Mei, speaks slowly so you can catch all the words and improve your listening comprehension.
+    If you subscribe to her paid membership, you’ll access transcripts and other exclusive content.`,
     coverImage: slowChineseCover,
-    links: ['https://slow-chinese.com'],
+    links: [
+      'https://open.spotify.com/show/5dWBxmI6mzjt6xvIYcI4Ox',
+      'https://podcasts.apple.com/us/podcast/id1562798369',
+      'https://www.youtube.com/playlist?list=PLDEA0w2jIo4oh_wHda3whDej5hmhJAIG9',
+      'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NjY5ZmVkYy9wb2RjYXN0L3Jzcw==',
+      'https://anchor.fm/s/5669fedc/podcast/rss',
+    ],
     targetLanguage: 'mandarin-chinese',
     mediumLanguage: 'english',
     levels: ['beginner', 'intermediate'],
-    episodeCount: 200,
-    isActive: true,
-    since: new Date('2012-01-01'),
+    episodeCount: 26,
+    isActive: false,
+    since: new Date(2012, 3, 12),
     hasVideo: false,
-    avarageEpisodeMinutesDuration: 10,
+    avarageEpisodeMinutesDuration: 12,
     transcript: { available: true, format: 'pdf', paid: false }
   },
   {
     id: 6,
     name: 'Coffee Break Chinese',
-    summary: 'Bite-sized lessons focusing on conversational Chinese.',
-    description: 'Designed for learners who want to practice speaking and listening in a manageable, time-efficient way.',
+    description: `Coffee Break Chinese is a podcast aimed at beginners who want to learn basic words and conversations in Mandarin.
+The hosts, teacher Crystal and student Mark, will help you learn how to order drinks, shop, and do other everyday tasks with confidence.
+The episodes also cover essential vocabulary like Chinese numbers.`,
     coverImage: coffeeBreakCover,
-    links: ['https://coffeebreakchinese.com'],
+    links: [
+      'https://coffeebreakchinese.com',
+      'https://podcasts.apple.com/us/podcast/id1201255510',
+      'https://open.spotify.com/show/594qQloJqkoSo6voMq85Em',
+      'https://feeds.acast.com/public/shows/58cc3ec5-b23c-4de1-b8cb-21d229533dd9'
+    ],
     targetLanguage: 'mandarin-chinese',
     mediumLanguage: 'english',
-    levels: ['beginner', 'intermediate'],
-    episodeCount: 100,
+    levels: ['beginner'],
+    episodeCount: 40,
     isActive: true,
-    since: new Date('2017-01-01'),
+    since: new Date(2017, 0, 1),
     hasVideo: false,
-    avarageEpisodeMinutesDuration: 15,
+    avarageEpisodeMinutesDuration: 23,
     transcript: { available: true, format: 'pdf', paid: true }
   },
   {
@@ -133,8 +145,7 @@ When you’re no longer a beginner, you can move on to the intermediate and adva
     name: 'Learn Taiwanese Mandarin With Miss Lin',
     description: `大家好，我是林老師! This is MandarinWithMissLin from Taiwan. I'm from Taipei, Taiwan.  I hope this Podcast can help you train your Chinese listening skill and learn natural Taiwanese Mandarin vocabulary and phrases.  
 My mission is to help learners to speak Chinese naturally, to help you learn authentic Taiwanese Mandarin, and discover Taiwanese culture. To learn more with me , please take a look at my courses or my Youtube channel.  More free Taiwanese Mandarin sources on my website.  https://www.taiwanesemandarinwithmisslin.com 
-Big thank you to my students on Patreon. I now provide transcript service for Elephant Mountain tier so you can study pinyin and zhuyin PDFs with each episode. 
-❤️ Thank you for your support along the way.`,
+Big thank you to my students on Patreon. I now provide transcript service for Elephant Mountain tier so you can study pinyin and zhuyin PDFs with each episode.`,
     coverImage: mandarinWithMissLinCover,
     links: [
       'https://mandarin-with-miss-lin.teachable.com/',
@@ -156,8 +167,9 @@ Big thank you to my students on Patreon. I now provide transcript service for El
   },
   {
     id: 8,
-    name: 'Mandarin Monkey Podcast',
-    description: 'Chinese and English Language podcast. A mixed couple (Tom & Ula) living in Taiwan, teach Chinese through the use of Chinglish (Chinese and English) on a variety of topics. Learn Chinese, study methods, Entertainment, news, life, business, hints and tricks to learning Mandarin. Hear a native speaking naturally and at natural pace but with the English translation so you can follow the context of the conversation. Enjoy.',
+    name: 'Mandarin Monkey',
+    description: `Tom and Ula, the hosts of the Mandarin Monkey podcast, are a married couple. This creates a fun dynamic that makes tuning into each episode more entertaining than the average language podcast. The podcast covers their daily life, current events, and trends.
+Tom is a native English speaker, while Ula is a native Taiwanese Mandarin speaker. And they use both in their podcast episodes, a method they call “Chinglish.” The use of English makes the podcast accessible to intermediate learners since you can pick up on context clues from English.`,
     coverImage: mandarinMonkeyCover,
     links: [
       'https://mandarinmonkey.com/mandarin-monkey-podcast/',
@@ -170,7 +182,7 @@ Big thank you to my students on Patreon. I now provide transcript service for El
     ],
     targetLanguage: 'mandarin-chinese',
     mediumLanguage: 'english',
-    levels: ['beginner', 'intermediate', 'advanced'],
+    levels: ['intermediate'],
     episodeCount: 365,
     isActive: true,
     since: new Date(2018, 7, 18),
@@ -360,27 +372,89 @@ If you join the ChillChat paid membership, then you’ll get access to podcast t
   },
   {
     id: 18,
-    name: 'BearTalk 狗熊有话说',
-    description: `BearTalk Podcast is a Chinese podcast that shares technology insights, book reviews, and personal improvement tips since 2012. BearTalk Podcast was the Editor's Choice of iTunes China in 2013, which has more than 60,000 listeners.
-Since then, the host (Bear Liu) has covered topics ranging from book reviews to self-development advice and artificial intelligence.
-Since this isn't a language-learning podcast, you need a high level of Chinese proficiency to follow along. With regular listening, you'll train your ears to understand real-world Mandarin. And you’ll expand your vocabulary, too.`,
-    coverImage: bearTalkCover,
+    name: 'The ABC Storytime Podcast',
+    description: `If you have kids, why not use podcasts to introduce them to Chinese? They can listen to an episode or two in the car or before going to bed.
+    The ABC Storytime Podcast is mostly aimed at preschool kids. It covers children’s stories like “Little Blue Truck” and “The Very Hungry Caterpillar” in Mandarin, which are simple to understand even for the youngest language learners.`,
+    coverImage: theAbcStorytimeCover,
     links: [
-      'https://beartalking.com/podcast',
-      'https://podcasts.apple.com/us/podcast/id544563053',
-      'https://open.spotify.com/show/4aJ7d47y8IOeqGZLNE81Yz',
-      'https://open.spotify.com/show/4aJ7d47y8IOeqGZLNE81Yz',
-      'https://feeds.redcircle.com/936a3212-92e5-41c7-b6f9-39e3596adeb8#rss',
-      'https://www.youtube.com/@Bearbig/podcasts'
+      'https://podcasts.apple.com/us/podcast/the-abc-storytime-podcast/id1546174165',
+      'https://open.spotify.com/show/0kSdllRJLlzbXQP58tmhOw',
+      'https://feed.podbean.com/abcstorytimepodcast/feed.xml#rss'
+    ],
+    targetLanguage: 'mandarin-chinese',
+    mediumLanguage: 'english',
+    levels: ['beginner'],
+    episodeCount: 12,
+    isActive: false,
+    since: new Date(2012, 0, 1),
+    hasVideo: false,
+    avarageEpisodeMinutesDuration: 5,
+    transcript: { available: false }
+  },
+  {
+    id: 19,
+    name: 'Talk Chineasy',
+    description: `The creator of TalkChineasy is ShaoLan Hsueh, a Taiwanese entrepreneur who founded Chineasy – a Chinese learning system that includes an app for visual studying.
+The podcast’s guestlist is impressive, consisting of CEOs, MIT professors, and writers. It combines English and Mandarin, which makes the podcast accessible to beginners who want to boost their vocabulary. But even intermediate or advanced learners will have fun listening to the episodes thanks to the interesting guests and conversations.`,
+    coverImage: talkChineasyCover,
+    links: [
+      'https://www.chineasy.com/talk/',
+      'https://podcasts.apple.com/us/podcast/id1191490521',
+      'https://soundcloud.com/talk-chineasy',
+      'https://www.youtube.com/@ChineasybyShaoLan'
+    ],
+    targetLanguage: 'mandarin-chinese',
+    mediumLanguage: 'english',
+    levels: ['beginner'],
+    episodeCount: 141,
+    isActive: true,
+    since: new Date(2012, 0, 1),
+    hasVideo: true,
+    avarageEpisodeMinutesDuration: 8,
+    transcript: { available: false }
+  },
+  {
+    id: 20,
+    name: 'MandarinPod',
+    description: `MandarinPod is a conversational Chinese language learning podcast. We create current and engaging content for advanced Chinese language learners. Our subscribers can expect to improve their listening skills, learn about Chinese culture, and be introduced to Chinese guests from different fields. Let’s learn together!
+This podcast is presented by Sishu Mandarin. Sishu Mandarin is a Chinese language school located in New York City. We provide both in-person and online Chinese classes for individuals, groups, and corporate clients.`,
+    coverImage: mandarinPodCover,
+    links: [
+      'https://sishumandarin.com/chinese-language-learning-podcast',
+      'https://podcasts.apple.com/us/podcast/id1531948313',
+      'https://open.spotify.com/show/52Qj9nFOeYnvyR93wygnW1',
+      'https://anchor.fm/s/367f3df8/podcast/rss'
     ],
     targetLanguage: 'mandarin-chinese',
     mediumLanguage: 'english',
     levels: ['advanced'],
-    episodeCount: 482,
-    isActive: true,
-    since: new Date(2012, 6, 13),
-    hasVideo: true,
+    episodeCount: 14,
+    isActive: false,
+    since: new Date(2012, 0, 1),
+    hasVideo: false,
     avarageEpisodeMinutesDuration: 30,
     transcript: { available: false }
+  },
+  {
+    id: 21,
+    name: '慢速中文 Slow chinese',
+    description: `慢速中文 Slow Chinese is a cultural podcast for Chinese learners. If you are learning Chinese and are curious about China, you’ve come to the right place! They are personal narratives by native Chinese people, they are read in Mandarin at a slow speed (2~3 characters per second). Topics vary from language, knowledge, tradition and culture to opinions on social phenomena.
+We are a team of enthusiastic people and are devoted ourselves to revealing the authentic China in its own language. However, we are not professional Chinese teachers. We do not guarantee the correctness of word choice or grammar. But we do guarantee that we are 100% Chinese.`,
+    coverImage: slowChineseArchivedCover,
+    links: [
+      'https://podcasts.apple.com/us/podcast/id1482243873',
+      'https://kitchenknif.github.io/SlowChinese/podcast.rss',
+      'https://www.youtube.com/@slowchinese-3967',
+      'https://podcastaddict.com/podcast/slow-chinese/2444652'
+    ],
+    targetLanguage: 'mandarin-chinese',
+    mediumLanguage: 'english',
+    levels: ['intermediate', 'upper-intermediate'],
+    episodeCount: 224,
+    isActive: false,
+    since: new Date(2019, 5, 26),
+    hasVideo: false,
+    avarageEpisodeMinutesDuration: 30,
+    transcript: { available: true, paid: false }
   },
 ]
