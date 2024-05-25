@@ -7,8 +7,9 @@ interface Props {
   isLoading?: boolean
   disabled?: boolean
   className?: string
-  variant?: 'primary' | 'outline',
+  variant?: 'primary' | 'outline' | 'discrete',
   compact?: boolean
+  noFullWidthInMobile?: boolean
   children: ReactNode
 }
 export const Button = ({
@@ -18,6 +19,7 @@ export const Button = ({
   isLoading = false,
   variant = 'primary',
   compact = false,
+  noFullWidthInMobile = false,
   children
 }: Props) => (
   <button
@@ -26,9 +28,12 @@ export const Button = ({
     className={cn(
       variant === 'primary'
         ? 'bg-primary text-white'
-        : 'text-primary border-primary border-[1px] border-solid',
+        : variant === 'outline'
+          ?'text-primary border-primary border-[1px] border-solid'
+          : 'text-primary',
       compact ? 'px-6 py-3' : 'px-3 py-2',
-      'w-full md:w-auto rounded-md',
+      noFullWidthInMobile ? 'w-auto' : 'w-full md:w-auto',
+      'rounded-md',
       className
     )}
   >

@@ -31,5 +31,5 @@ app.use(express.static("build/client"));
 app.all("*", createRequestHandler({ build }));
 
 app.listen(3000, () => {
-  console.log("App listening on http://localhost:3000");
+  console.log("Linguocast listening on http://localhost:3000");
 });

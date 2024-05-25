@@ -1,17 +1,21 @@
-import { ArrowLink } from '@/components/arrow-link'
-import { Button } from '@/components/button'
 import { PlatformIcon } from '@/components/platform-icon'
-import { PODCASTS } from '@/data/podcasts.data'
+import { Podcast } from '@/types'
 import { getMainDomain, urlSafe } from '@/utils/url.utils'
-import { Link, useParams } from '@remix-run/react'
-import { ArrowUpRightIcon, PenLineIcon, PencilIcon } from 'lucide-react'
+import { Link, json, useLoaderData } from '@remix-run/react'
+import axios from 'axios'
+import { ArrowUpRightIcon, PenLineIcon } from 'lucide-react'
 import React from 'react'
+import invariant from 'tiny-invariant'
 
+export const loader = async ({ params }) => {
+  invariant(params.podcastId, "Missing contactId param");
+  const { data: podcast } = await axios.get<Podcast>(`http://localhost:3001/api/podcasts/${params.podcastId}`)
+  return json({ podcast })
+}
 
 const ViewPodcast = () => {
-  const { podcastId } = useParams()
-  const podcast = PODCASTS.find(({ id }) => id === +podcastId!)
-  if (!podcast) return
+  const { podcast } = useLoaderData<typeof loader>()
+  if (!podcast) return <>Podcast not found!</>
 
   const suggestEditElement = (
     <Link
@@ -24,7 +28,7 @@ const ViewPodcast = () => {
   ) 
 
   return (
-    <div className="grid lg:grid-cols-3 gap-x-12 gap-y-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-8">
   <div className='lg:col-span-2 self-start flex flex-col justify-between'>
     <div>
       <div className='text-3xl mb-4 font-bold'>{podcast.name}</div>
@@ -41,14 +45,14 @@ const ViewPodcast = () => {
       </ul>         
       <div>
         {podcast.description.split('\n').filter(text => text).map((text, index) => (
-          <p key={index} className='mb-4'>{text}</p>
+          <p key={index} className='mb-4 break-words'>{text}</p>
         ))}
       </div>
       <div className='hidden lg:block mt-8'>{suggestEditElement}</div>
     </div>
   </div>
   <div className="row-span-2">
-    <img src={podcast.coverImage} className='w-full border-2 border-solid border-slate-300 rounded-xl mb-4' />
+    <img src={`http://localhost:3001/podcasts/covers/${podcast.coverImage}`} className='w-full border-2 border-solid border-slate-300 rounded-xl mb-4' />
     <table className='mb-4 text-sm w-full'>
       <tbody>
         <tr className='border-b-2 border-solid border-slate-100'>

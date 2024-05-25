@@ -26,7 +26,7 @@ export const PODCASTS: Podcast[] = [
     summary: 'An engaging show with a charismatic host teaching useful Chinese expressions, featuring interactive "ask fast, reply fast" 快問快答 segments with students.',
     description: 'content',
     coverImage: daPengCover,
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     links: [],
     levels: ['intermediate', 'upper-intermediate']
@@ -37,9 +37,15 @@ export const PODCASTS: Podcast[] = [
     description: 'Basic podcast',
     summary: 'Is a good podcast',
     coverImage: teaTimeCover,
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
-    links: [],
+    links: [
+      'https://teatimechinese.com/',
+      'https://www.patreon.com/teatimechinese',
+      'https://open.spotify.com/show/6mJNegfDGmNaG1mWJtZJed'
+    ],
+    episodeCount: 88,
+    since: new Date(2022, 5, 30),
     levels: ['beginner', 'intermediate']
   },
   {
@@ -48,7 +54,7 @@ export const PODCASTS: Podcast[] = [
     summary: 'Fun Chinese learning where 3 teachers from mainland China & Taiwan tackle culture, current events, and daily life.',
     description: 'Dashu Mandarin offers a refreshing take on learning Chinese through its engaging podcast format. The dynamic trio consists of two hosts from mainland China and one from Taiwan, each with their own distinct teaching styles and regional accents, allowing you to compare and contrast the nuances of different Mandarin pronunciations.\n\nThe show tackles a variety of topics ranging from daily life and culture to current events in China, equiping listeners with the confidence to navigate conversations in natural settings. The lighthearted approach and the hosts\' passion for Chinese language and culture make learning feel less like a chore and more like an enjoyable journey.',
     coverImage: dashuCover,
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     isActive: true,
     episodesCount: 97,
@@ -84,7 +90,7 @@ When you’re no longer a beginner, you can move on to the intermediate and adva
       'https://podcasts.apple.com/us/podcast/chinesepod-intermediate/id1529834171',
       'https://podcasts.apple.com/us/podcast/chinesepod-advanced/id1529838325'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner', 'intermediate', 'upper-intermediate', 'advanced'],
     episodeCount: 4000,
@@ -107,7 +113,7 @@ When you’re no longer a beginner, you can move on to the intermediate and adva
       'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NjY5ZmVkYy9wb2RjYXN0L3Jzcw==',
       'https://anchor.fm/s/5669fedc/podcast/rss',
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner', 'intermediate'],
     episodeCount: 26,
@@ -130,7 +136,7 @@ The episodes also cover essential vocabulary like Chinese numbers.`,
       'https://open.spotify.com/show/594qQloJqkoSo6voMq85Em',
       'https://feeds.acast.com/public/shows/58cc3ec5-b23c-4de1-b8cb-21d229533dd9'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner'],
     episodeCount: 40,
@@ -155,7 +161,7 @@ Big thank you to my students on Patreon. I now provide transcript service for El
       'https://www.patreon.com/MandarinWithMissLin'
     
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner', 'intermediate'],
     episodeCount: 36,
@@ -180,7 +186,7 @@ Tom is a native English speaker, while Ula is a native Taiwanese Mandarin speake
       'https://feeds.soundcloud.com/users/soundcloud:users:495394536/sounds.rss'
 
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['intermediate'],
     episodeCount: 365,
@@ -197,7 +203,7 @@ Tom is a native English speaker, while Ula is a native Taiwanese Mandarin speake
     links: [
       'https://www.youtube.com/user/learnchinesenow'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner', 'intermediate'],
     episodeCount: 268,
@@ -217,10 +223,10 @@ Only the first 100 episodes are free to listen, the rest and the transcripts are
     links: [
       'https://melnyks.com',
       'https://open.spotify.com/show/6oPfmkjNYuORPUDNYYhi5f',
-      'https://podcasts.apple.com/us/podcast/learn-mandarin-chinese-chinese-audio-lessons/id119843495',
+      'https://podcasts.apple.com/us/podcast/learn-mandarin-chinese-audio-lessons/id119843495',
       'https://www.melnyks.com/?feed=podcast#rss'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner'],
     episodeCount: 276,
@@ -244,7 +250,7 @@ For those of you with just the plane ride to prepare, check our survival phrase 
       'https://www.chineseclass101.com/wp-feed-audio.php#rss'
     
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner'],
     episodeCount: 66,
@@ -267,7 +273,7 @@ For those of you with just the plane ride to prepare, check our survival phrase 
       'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy82NDdjYzQzYy9wb2RjYXN0L3Jzcw==',
       'https://anchor.fm/s/647cc43c/podcast/rss'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['upper-intermediate', 'advanced'],
     episodeCount: 150,
@@ -288,7 +294,7 @@ Definitely worth listening.`,
       'https://www.facebook.com/ilovelearningchinese/',
       'https://drive.google.com/drive/folders/17E9eQ4Q2aJ_Fa5Vb1eCCKHXvfZl4ZyDM'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner'],
     episodeCount: 157,
@@ -312,7 +318,7 @@ Provides lessons that are engaging and fun, with a focus on practical language u
       'https://open.spotify.com/show/6Fz1yve3MpMgQu2H133vfL',
       'https://rephonic.com/podcasts/breadtoast-chinese-mian-bao-tu-si'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['upper-intermediate'],
     episodeCount: 25,
@@ -335,7 +341,7 @@ Provides lessons that are engaging and fun, with a focus on practical language u
       'https://www.youtube.com/channel/UCDSSndxcaLY--_eS5p9a2rQ',
       'http://learningchinesethroughstories.libsyn.com/rss'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner', 'intermediate', 'upper-intermediate', 'advanced'],
     episodeCount: 609,
@@ -360,7 +366,7 @@ If you join the ChillChat paid membership, then you’ll get access to podcast t
       'https://buymeacoffee.com/chillingchinese',
       'https://www.patreon.com/chillingchinese'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner'],
     episodeCount: 231,
@@ -381,7 +387,7 @@ If you join the ChillChat paid membership, then you’ll get access to podcast t
       'https://open.spotify.com/show/0kSdllRJLlzbXQP58tmhOw',
       'https://feed.podbean.com/abcstorytimepodcast/feed.xml#rss'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner'],
     episodeCount: 12,
@@ -403,7 +409,7 @@ The podcast’s guestlist is impressive, consisting of CEOs, MIT professors, and
       'https://soundcloud.com/talk-chineasy',
       'https://www.youtube.com/@ChineasybyShaoLan'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['beginner'],
     episodeCount: 141,
@@ -425,7 +431,7 @@ This podcast is presented by Sishu Mandarin. Sishu Mandarin is a Chinese languag
       'https://open.spotify.com/show/52Qj9nFOeYnvyR93wygnW1',
       'https://anchor.fm/s/367f3df8/podcast/rss'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['advanced'],
     episodeCount: 14,
@@ -447,7 +453,7 @@ We are a team of enthusiastic people and are devoted ourselves to revealing the 
       'https://www.youtube.com/@slowchinese-3967',
       'https://podcastaddict.com/podcast/slow-chinese/2444652'
     ],
-    targetLanguage: 'mandarin-chinese',
+    targetLanguage: 'mandarin',
     mediumLanguage: 'english',
     levels: ['intermediate', 'upper-intermediate'],
     episodeCount: 224,

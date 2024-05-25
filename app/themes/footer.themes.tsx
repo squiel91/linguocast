@@ -62,7 +62,7 @@ export const Footer = () => (
         </li>
       </ul>
     </div>
-    <div className='md:col-span-2 border-t-[1px] border-solid border-slate-300 pt-4 mb-8 mt-4 text-sm'>
+    <div className='md:col-span-2 md:border-t-[1px] border-slate-300 md:pt-4 mb-8 text-xs md:text-sm'>
       <div className="mb-2 flex gap-3 flex-col">
         <div className="flex gap-4 items-center">
           <img src={CCLogo} width={120} />

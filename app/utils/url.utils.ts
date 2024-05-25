@@ -1,5 +1,10 @@
 export const getMainDomain = (url: string): string => {
-  const parsedUrl = new URL(url)
+  let parsedUrl: URL | null = null
+  try {
+    parsedUrl = new URL(url)
+  } catch(error) {
+    parsedUrl = new URL('https://' + url)
+  }
   const hostname = parsedUrl.hostname
 
   const parts = hostname.split('.')

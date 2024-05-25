@@ -11,6 +11,7 @@ import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 import tailwindStyles from "./tailwind.css?url";
 import baseStyles from "./styles.css?url";
+import { AuthContextWrapper } from './auth/context.auth';
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: tailwindStyles },
@@ -51,9 +52,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
+        <AuthContextWrapper>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+        </AuthContextWrapper>
       </body>
     </html>
   );
